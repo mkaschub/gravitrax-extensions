@@ -14,7 +14,7 @@ PART(90, 50) Spacer(50);
 ////////////////////////////////////////////////////////////////////
 module Spacer(h=5, stubs=true)
 {
-  if(stubs) color("grey") {
+  if(stubs) {
   Ds = d2_stubs * 2 / sqrt(3);  
   Bs = Ds/2-3;
   
@@ -25,7 +25,7 @@ module Spacer(h=5, stubs=true)
     hull() {cube([20, 2, 0.1]); ty(-3) cube([20, 2, 2.2]); }
   }
    
-  color("grey") diff() 
+  diff() 
   { 
       for(z=[0:10:h]) 
         tz(z) le(min(h-z, 10), scale=0.97, center=false) offset(5) 
