@@ -1,0 +1,3 @@
+[submodule "mkscad"]
+	path = mkscad
+	url = https://github.com/mkaschub/mkscad
