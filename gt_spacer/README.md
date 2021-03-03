@@ -1,4 +1,9 @@
-\n****\n\n![all.png](all.png)\n\n    use <gt_spacer.scad>\n    \n\n
+
+
+![all.png](all.png)
+
+    use <gt_spacer.scad>
+
  Gravitrax compatible spacers with a hole in the middle
  for the marble to fall through.
 
