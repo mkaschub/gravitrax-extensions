@@ -8,6 +8,30 @@
 
 
 
+**Stack(10, standing=1);**
+
+![Stack_10_standing_1.png](Stack_10_standing_1.png)
+
+    use <gt_stack.scad>
+    Stack(10, standing=1);
+
+
+[Stack_10_standing_1.stl](Stack_10_standing_1.stl)
+
+
+
+**Stack(20, standing=1);**
+
+![Stack_20_standing_1.png](Stack_20_standing_1.png)
+
+    use <gt_stack.scad>
+    Stack(20, standing=1);
+
+
+[Stack_20_standing_1.stl](Stack_20_standing_1.stl)
+
+
+
 **Stack(10);**
 
 ![Stack_10.png](Stack_10.png)
@@ -67,48 +91,3 @@
 [Stack_60_mouseear_1.stl](Stack_60_mouseear_1.stl)
 
 
-
-**TileStraight();**
-
-![TileStraight.png](TileStraight.png)
-
-    use <gt_stack.scad>
-    TileStraight();
-
-
-[TileStraight.stl](TileStraight.stl)
-
-
-
-**TileBase();**
-
-![TileBase.png](TileBase.png)
-
-    use <gt_stack.scad>
-    TileBase();
-
-
-[TileBase.stl](TileBase.stl)
-
-
-
-**TileCurves();**
-
-![TileCurves.png](TileCurves.png)
-
-    use <gt_stack.scad>
-    TileCurves();
-
-
-[TileCurves.stl](TileCurves.stl)
-
-
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
