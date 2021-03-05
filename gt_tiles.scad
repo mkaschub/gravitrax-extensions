@@ -1,8 +1,10 @@
 include <gravitrax.scad>
 
 
-PART(-150) Ring(petg=1);
-PART(-100) Ring();
+PART(40, -60) Ring(petg=1);
+PART(120, -60) Ring();
+
+
 
 PART(  0) TileBase();
 PART( 80) TileX();
@@ -16,7 +18,9 @@ PART(200, 60) TileUTurn();
 PART(280, 60) TileYoyo();
 
 
+PART(0, 120) SlopeTileX();
 
+PART(80, 120) TileDouble();
 
 module CutCurve(d=d2_tile, rr=0.9, a=60, h=h_track, d0=d_track)
 {
@@ -130,19 +134,62 @@ module cc(d=d2_tile, rr=0.9, a=60, h=h_track, d0=d_track)
 
 }
 
-// TileCurves();
+// SlopeTileX();
 //====================================================
-module TileCurvesf()
+module SlopeTileX()
 {
   diff()
   {
-    Tile();
+    union() {
+      Tile();
+      for(a=[0,60]) rotz(a) hull() { 
+        x = d2_tile/2-1-e; 
+        t(-x, 0, 5) cubexy([2, 17, 10]); 
+        t(x, 0, 0) cubexy([2, 17, 10]); 
+      }
+    }
     CutRing();
-    for(a=[0,2,3,4]) rotz(60*a) CutEntry();
-    for(a=[0:60:350])  rotz(a) CutStack();
-    
-    CutCurve(d2_tile, 0.9, 60);
-    rotz(180) tx(-4) CutCurve(d2_tile, 0.25, 120);
+    for(a=[0:60:350])  rotz(a) CutStack();    
+      
+    for(a=[0,1]) rotz(60*a) 
+    {
+      CutEntry();
+      rotz(180) tz(5) CutEntry();    
+      tz(h_track+2.5) 
+        roty(atan(5/(d2_tile-10))) roty(-90)
+        le_ch(d2_tile+2, -2., true) sqy_ci(20, d_track);
+    }
+  }
+}
+
+// TileDouble();
+//====================================================
+module TileDouble()
+{
+  diff()
+  {
+    union() {
+      Tile();
+      tz(6) cylinder(h=10, d1=d2_tile-2, d2=20);
+    }
+    CutRing();
+    for(a=[0:60:350])  rotz(a) CutStack();    
+    for(a=[0:5]) rotz(60*a) CutEntry(); 
+    // Auslass
+    tz(h_track) 
+    {
+      tz(d_track+2-e) cylinder(h=25, d1=d_track, d2=d_track+14);
+      tz(d_track+2) tx(d_track/2) mx() rotx(-90) re(90) sqy_co(d_track, d_track);
+      t(d_track/2-e, 0, d_track/2) roty() 
+      hull() { 
+        tx(-2) cylinder(d=d_track, h=e); 
+        tz(d2_tile/2-d_track/2-4)  cylinder(d=d_track, h=e);
+      }
+      // Einlass
+      rr = 18;
+      for(a=[1:5]) rotz(60*a) tx(d2_tile/2) rotz() roty() 
+        tx(-19) re(90, rr, $fa=3) sqy_co(19, d_track); 
+    }
   }
 }
 
