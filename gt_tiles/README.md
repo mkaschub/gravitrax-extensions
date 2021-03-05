@@ -104,18 +104,6 @@
 
 
 
-**TileCurveSlope();**
-
-![TileCurveSlope.png](TileCurveSlope.png)
-
-    use <gt_tiles.scad>
-    TileCurveSlope();
-
-
-[TileCurveSlope.stl](TileCurveSlope.stl)
-
-
-
 **TileUTurn();**
 
 ![TileUTurn.png](TileUTurn.png)
@@ -137,5 +125,17 @@
 
 
 [TileYoyo.stl](TileYoyo.stl)
+
+
+
+**TileVulcano();**
+
+![TileVulcano.png](TileVulcano.png)
+
+    use <gt_tiles.scad>
+    TileVulcano();
+
+
+[TileVulcano.stl](TileVulcano.stl)
 
 
