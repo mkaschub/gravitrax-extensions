@@ -136,7 +136,7 @@ module TileVulcano()
   {
     union() {
       Tile();
-      tz(10-e) cylinder(h=9, d1=47, d2=25);
+      tz(10-e) cylinder(h=20, d1=47, d2=25);
     }
     CutRing();
     for(a=[0:60:350])  rotz(a) CutStack();    
@@ -144,28 +144,15 @@ module TileVulcano()
     // Auslass
     tz(h_track) 
     {
-      *tz(d_track+2-e) cylinder(h=25, d1=d_track, d2=d_track+14);
-      *tz(d_track+2) tx(d_track/2) mx() rotx(-90) re(90) sqy_co(d_track, d_track);
-      *hull()
-      {
-        t(d2_tile/2-4, 0, d_track/2) roty() cylinder(d=d_track, h=e);
-       tz(d_track/2+2) sphere(d=d_track); 
-      }
       tz(d_track/2+2) cylinder(d=d_track,h=20); 
 
-      
-      *t(d_track/2-e, 0, d_track/2) roty() 
-      *hull() { 
-        tx(-2) cylinder(d=d_track, h=e); 
-        tz(d2_tile/2-d_track/2-4)  cylinder(d=d_track, h=e);
-      }
       // Einlass
-      rr = 15;
+      rr = 3;
       for(a=[0,2,4]) rotz(60*a) tx(d2_tile/2) rotz() roty() 
-        tx(-19) re(90, rr, $fa=3) sqy_co(19, d_track); 
+        tx(-20) re(120, rr, $fa=3) sqy_co(20, d_track); 
     }
     tz(-e) cylinder(d=d_track,h=40); 
-    tz(8) cylinder(d1=d_track, d2=40,h=15); 
+    tz(15) cylinder(d1=d_track, d2=35,h=20); 
 
   }
 }
